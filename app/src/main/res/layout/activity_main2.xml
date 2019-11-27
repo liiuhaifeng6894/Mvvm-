@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--* 最外层用<layout>标签嵌套，注意layout的首字母是小写的“l”
+      * <layout>标签的下面紧跟着一个<data>标签，这个标签其实就是让我们进行数据绑定的一个标签
+      * <data>标签中，包含着<variable>标签，这个标签就是我们将“变量”放置的位置
+      * <variable>标签里面分别有<type>  <name>两个标签，分别来标识变量类型和变量名称
+      * <type>标签 标识变量类型，比如java.lang.String这就是String类型，com.guaju.mvvm.bean.User 这个就是一个我自定义的一个User类型
+      * <name>标签 表示的就是我们定义的一个变量名称，这个变量名称我们会在下方的布局和对应的java代码中引用到 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:id="@+id/phonenum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.phoneNumbenr}"
+            android:textColor="#666"
+            android:textSize="24sp"></TextView>
+
+    </LinearLayout>
+
+    <data class="DAge">
+
+        <import type="com.example.mvvmdemo2.bean.User"></import>
+
+        <variable
+            name="user"
+            type="User" />
+    </data>
+
+    <!--    <data>-->
+
+    <!--        <variable-->
+    <!--            name="user"-->
+    <!--            type="com.example.mvvmdemo2.bean.User" />-->
+    <!--    </data>-->
+
+</layout>

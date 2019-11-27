@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#acacac" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="来源："
+                android:textColor="#acacac" />
+
+            <TextView
+                android:id="@+id/news_source"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{news.source}"
+                android:textColor="#acacac" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/news_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:text="@{news.title}"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <data>
+
+        <variable
+            name="news"
+            type="com.example.mvvmdemo2.bean.News" />
+    </data>
+
+</layout>
